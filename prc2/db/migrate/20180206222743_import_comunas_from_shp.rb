@@ -6,10 +6,16 @@ class ImportComunasFromShp < ActiveRecord::Migration[5.1]
 		Comuna.transaction do
 			execute from_shp_sql
 			execute <<-SQL
-				insert into comunas(NOM_PROV, NOM_COM, COD_COMUNA, geom, created_at, updated_at)
-					select nom_prov, nom_com, cod_comuna, ST_Transform(geom,4326),NOW(),NOW() from division_comunal_ref where nom_prov="Santiago"
+				insert into comunas(nom_prov, nom_com, cod_comuna, geom, created_at, updated_at)
+					select nom_prov, nom_com, cod_comuna, ST_Transform(geom,4326),NOW(),NOW() from division_comunal_ref where nom_prov = 'Santiago' 
+
 			SQL
 			drop_table :division_comunal_ref
+		#ST_Force2D
+		# -S  # SIMPLE
+		#ST_Transform(geom,4326)
+		#and nom_com='Providencia'
+
 		end
 	end
 	def down
