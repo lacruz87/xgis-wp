@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :ubicaciones
   get 'servicios/index'
   root 'servicios#index'
 
 
 
   get 'servicios/comunas_map'
-  get 'json1' => 'servicios#comunas_map', :defaults => { :format => 'json' }
+  #get 'json1' => 'servicios#comunas_map', :defaults => { :format => 'json' }
 
 
 

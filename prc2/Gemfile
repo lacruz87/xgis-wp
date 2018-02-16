@@ -32,9 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'activerecord-postgis-adapter'
 
-gem 'rgeo'
+gem 'rgeo' 
 gem 'rgeo-geojson'
-gem 'pry-rails'
+gem 'pry-rails' # mejor consola
+gem 'geocoder','1.4.4' # para sacar la información de la latitud y longitud
 
 
 
