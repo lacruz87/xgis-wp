@@ -14,7 +14,7 @@
           position: uluru,
           map: map
         });
-        map.data.loadGeoJson("<%=request.fullpath + '.json'%>");
+        map.data.loadGeoJson("<%=@jsonPath%>");
 
 			      //Create an info box for displaying names
 			var infoBox = document.createElement('div');

@@ -4,13 +4,12 @@
 
 <h1>Comunas</h1>
 
-
-
-<h3>My Google Maps Demo</h3>
-<div id="map"></div>
-
-<%= render 'map', lat:@lat, lng: @lng, mapa: @mapa, key: @key %>
-
+</br>
+<%= link_to "Inicio", root_path %>
 </br>
 
-Comuna = <%= @mapa[0].nom_com %>
+<div id="map"></div>
+
+<%= render 'map', lat:@lat, lng: @lng, mapa: @mapa, key: @key, jsonPath: @jsonPath %>
+
+</br>

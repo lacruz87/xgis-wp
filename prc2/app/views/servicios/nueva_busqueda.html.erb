@@ -1,0 +1,25 @@
+
+<h1>Resultado del Buscador de Mapas</h1>
+
+<h2>Busqueda: "<%=@direccion%>"<h2>
+
+<div>
+
+	<li>Lat: "<%=@lat%>"
+	<li>Lng: "<%=@lng%>"
+	<li>Comuna: "<%=@nombrecomuna%>"
+
+</div>
+
+</br>
+<%= link_to "Buscador", 'servicios#buscador' %>
+</br>
+</br>
+<%= link_to "Inicio", root_path %>
+</br>
+
+<div id="map"></div>
+
+<%= render 'map', lat:@lat, lng: @lng, mapa: @mapa, key: @key, jsonPath: @jsonPath %>
+
+</br>
