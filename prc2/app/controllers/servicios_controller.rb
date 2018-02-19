@@ -11,16 +11,16 @@ class ServiciosController < ApplicationController
 
   def comunas_map
 
-    #@mapa=Comuna.all
+    @mapa=Comuna.all
 
-    a=GisMethods.new()
-    @jsonPath=a.getJsonPath(request.fullpath)
+    a=GisMethods.new()    
     @key=a.getGoogleMapsKey()
 
-    @direccion="Las nieves 3435, Vitacura, Chile"
+    @lat=-33.405009
+    @lng=-70.597293
 
-    @lat,@lng=a.getLatLng(@direccion)    
-    @mapa = a.getComuna(@lat,@lng,4326)    
+    @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)
+   
 
     respond_to do |format|
       format.json do
@@ -42,19 +42,30 @@ class ServiciosController < ApplicationController
     @lng=@georeferencia[1]
   end
 
-  def buscador
+  def buscador_comuna
     
   end
   
-  def nueva_busqueda    
-    a=GisMethods.new()
-    @jsonPath=a.getJsonPath(request.fullpath)
+  def nueva_busqueda_comuna    
+    a=GisMethods.new()    
     @key=a.getGoogleMapsKey()
 
     @direccion = buscador_ubicacion_params['direccion']
+    @lat=buscador_ubicacion_params['lat']
+    @lng=buscador_ubicacion_params['lng']
 
-    @lat,@lng=a.getLatLng(@direccion)    
-    @mapa = a.getComuna(@lat,@lng,4326)
+
+    if (@lat==nil || @lng==nil) then
+      if (@direccion!=nil) then
+        @lat,@lng=a.getLatLng(@direccion)
+      else
+        @lat=-33.405009
+        @lng=-70.597293
+      end
+    end
+    
+    @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)    
+    @mapa = a.getComuna(@lat.to_f,@lng.to_f,4326)
 
     @nombrecomuna=@mapa[0].nom_com    
 
@@ -71,7 +82,7 @@ class ServiciosController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def buscador_ubicacion_params
-      params.permit(:direccion)
+      params.permit(:direccion,:lat,:lng)
     end
 
 

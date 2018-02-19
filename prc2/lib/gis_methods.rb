@@ -9,23 +9,24 @@ class GisMethods
     return "prueba helper"
   end
 
-  def getJsonPath(url)
+  def getJsonPath(url,lat, lng)
   	#request.fullpath.split("?")[0] + '.json' + '?' + request.fullpath.split("?")[1]
   	urlJson=""
 
 
 	begin
 	  urlJson=url.split("?")[0] + '.json' + '?' + url.split("?")[1]
+    urlJson=urlJson+'&'
 	rescue
 	  urlJson=url + '.json'
+    urlJson=urlJson+'?'
 	end
-
+    urlJson=urlJson+'lat='+lat.to_s+'&lng='+lng.to_s
     return urlJson
   end
 
   def getGoogleMapsKey()
-    #return ENV['FOOVAR']
-    return 'AIzaSyCyZsjAJ-29mhdr0KP2_EVWiZ9Qmy05hXo'
+    return ENV['GOOGLE_MAPS_APY_KEY']
   end
 
   def getLatLng(direccion_completa)

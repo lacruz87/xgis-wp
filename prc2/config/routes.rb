@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
 
   get 'servicios/comunas_map'
-  get 'servicios/nueva_busqueda'
-  get 'servicios/buscador'
+  get 'servicios/nueva_busqueda_comuna'
+  get 'servicios/buscador_comuna'
   get 'servicios/prueba'
   #get 'json1' => 'servicios#comunas_map', :defaults => { :format => 'json' }
 
