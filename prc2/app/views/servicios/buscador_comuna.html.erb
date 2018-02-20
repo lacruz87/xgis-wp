@@ -1,7 +1,7 @@
 <div class="container">
 	<h1>Buscador de Mapas</h1>
 	<div class="form-group">
-		<%= form_tag("/servicios/nueva_busqueda", method: "get") do %>
+		<%= form_tag("/servicios/nueva_busqueda_comuna", method: "get") do %>
 		<%= label_tag(:direccion, "Dirección:",class: 'form-control') %>
 		<%= text_field_tag(:direccion,"", class: 'form-control') %>
 
