@@ -36,9 +36,16 @@
 ehthumbs.db
 Thumbs.db
 
-# shp Files #
+# shp Files Requeridos Importacion#
 ####################
-*.shp
-*.shx
-*.dbf
+*.shp 
+*.shx 
+*.dbf 
+# shp Files Requeridos SRID#
+####################
 *.prj
+
+# shp Files Otros #
+####################
+*.sbx
+*.sbn
