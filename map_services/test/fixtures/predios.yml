@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gid: 1
+  objectid: 1
+  nom_com: MyString
+  sup_m2: 1.5
+  sup_ha: 1.5
+
+two:
+  gid: 1
+  objectid: 1
+  nom_com: MyString
+  sup_m2: 1.5
+  sup_ha: 1.5

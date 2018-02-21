@@ -1,2 +1,25 @@
-<h1>Servicios#predios_request</h1>
-<p>Find me in app/views/servicios/predios_request.html.erb</p>
+<div class="container">
+	<h1>Buscador de Mapas</h1>
+	<div class="form-group">
+		<%= form_tag("/servicios/predios_response", method: "get") do %>
+
+		<%= label_tag(:direccion, "Dirección:",class: 'form-control') %>
+		<%= text_field_tag(:direccion,"", class: 'form-control') %>
+		</br>
+		<%= label_tag(:radius, "Radio Busqueda (KM):",class: 'form-control') %>
+		<%= number_field(:radius, :km, in: 0.0..5.0, step: 0.1,class: 'form-control') %>
+		</br>
+		<%= label_tag(:sup_min, "Superficie Mínima (HA):",class: 'form-control') %>
+		<%= number_field(:sup_min, :ha, in: 0.0..1.0, step: 0.01,class: 'form-control') %>
+		</br>
+		<%= label_tag(:sup_max, "Superficie Máxima (HA):",class: 'form-control') %>
+		<%= number_field(:sup_max, :ha, in: 0.0..1.0, step: 0.01,class: 'form-control') %>
+		</br>
+		<%= submit_tag("Buscar") %>
+		<% end %>
+	</div>
+</div>
+
+</br>
+<%= link_to "Inicio", root_path %>
+</br>

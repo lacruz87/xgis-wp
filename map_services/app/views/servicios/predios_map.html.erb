@@ -1,2 +1,16 @@
-<h1>Servicios#predios_map</h1>
-<p>Find me in app/views/servicios/predios_map.html.erb</p>
+
+
+
+
+<h1>Predios</h1>
+Se muestra sólo un radio de 200 mt para esta vista desde un punto de vitacura
+</br>
+<%= link_to "Inicio", root_path %>
+</br>
+
+<div id="map"></div>
+
+<%= render 'map', lat:@lat, lng: @lng, mapa: @mapa, key: @key, jsonPath: @jsonPath %>
+
+</br>
+

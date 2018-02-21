@@ -1,2 +1,28 @@
-<h1>Servicios#predios_response</h1>
-<p>Find me in app/views/servicios/predios_response.html.erb</p>
+<h1>Resultado del Buscador de Mapas</h1>
+
+<h2>Busqueda: "<%=@response_var%>"<h2>
+
+<div>
+	<li>Dirección: "<%=@direccion%>"
+	<li>Radio [km]: "<%=@radius%>"
+	<li>Superficie Mínima [ha]: "<%=@sup_min%>"
+	<li>Superficie Máxima [ha]: "<%=@sup_max%>"
+	<li>Lat: "<%=@lat%>"
+	<li>Lng: "<%=@lng%>"
+
+
+</div>
+
+</br>
+<%= link_to "Buscador", 'predios_request' %>
+</br>
+</br>
+<%= link_to "Inicio", root_path %>
+</br>
+
+<div id="map"></div>
+
+<%= render 'map', lat:@lat, lng: @lng, mapa: @mapa, key: @key, jsonPath: @jsonPath %>
+
+</br>
+
