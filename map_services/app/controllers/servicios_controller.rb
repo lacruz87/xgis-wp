@@ -77,11 +77,11 @@ class ServiciosController < ApplicationController
     
   end
     
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def buscador_ubicacion_params
-      params.permit(:direccion,:lat,:lng)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def buscador_ubicacion_params
+    params.permit(:direccion,:lat,:lng)
   end
+  
 
   def predios_map
   end
