@@ -1,0 +1,225 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "pack",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 461.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp"
+	],
+	"file_history":
+	[
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/views/servicios/comuna_response.html.erb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/views/servicios/predios_request.html.erb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/views/servicios/predios_response.html.erb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/views/servicios/index.html.erb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/models/predio.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/views/servicios/predios_map.html.erb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/config/initializers/geocoder.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/config/database.yml",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/db/migrate/20180220223253_import_comunas_from_shp.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/db/migrate/20180221133117_import_predios_from_shp.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/db/migrate/20180221133102_create_predios.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/views/servicios/comuna_request.html.erb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/assets/stylesheets/servicios.scss",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/config/routes.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/.gitignore",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/prc2/db/migrate/20180206222743_import_comunas_from_shp.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/db/migrate/20180220223243_create_comunas.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/prc2/db/migrate/20180206222707_create_comunas.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/controllers/servicios_controller.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/models/comuna.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/lib/gis_methods.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/views/servicios/_map.html.erb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/models/concerns/featurable.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/views/layouts/application.html.erb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/views/servicios/prueba.html.erb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/app/views/servicios/comunas_map.html.erb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/config/initializers/inflections.rb",
+		"/home/lacruz2/Escritorio/XGIS/xgis-wp/map_services/Gemfile"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 102.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "xGis.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 288.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
