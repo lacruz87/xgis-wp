@@ -38,14 +38,14 @@ Thumbs.db
 
 # shp Files Requeridos Importacion#
 ####################
-*.shp 
-*.shx 
-*.dbf 
+#*.shp 
+#*.shx 
+#*.dbf 
 # shp Files Requeridos SRID#
 ####################
-*.prj
+#*.prj
 
 # shp Files Otros #
 ####################
-*.sbx
-*.sbn
+*#.sbx
+*#.sbn

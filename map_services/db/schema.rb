@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180221133117) do
     t.string "nom_prov"
     t.string "nom_com"
     t.integer "cod_comuna"
-    t.geometry "geom", limit: {:srid=>4326, :type=>"geometry"}
+    t.geometry "geom", limit: {:srid=>3785, :type=>"geometry"}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["geom"], name: "index_comunas_on_geom", using: :gist
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180221133117) do
     t.string "nom_com"
     t.float "sup_m2"
     t.float "sup_ha"
-    t.geometry "geom", limit: {:srid=>4326, :type=>"geometry"}
+    t.geometry "geom", limit: {:srid=>3785, :type=>"geometry"}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["geom"], name: "index_predios_on_geom", using: :gist

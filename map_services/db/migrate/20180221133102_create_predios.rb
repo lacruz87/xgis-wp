@@ -6,10 +6,11 @@ class CreatePredios < ActiveRecord::Migration[5.1]
       t.string :nom_com
       t.float :sup_m2
       t.float :sup_ha
-      t.geometry :geom, :srid => 4326, :geographic=>false
+      t.geometry :geom, :srid => 3785
       t.timestamps
     end
-#4326
+#4326 , :geographic=>false
+#3785
     change_table :predios do |t|
       t.index :geom, using: :gist
     end

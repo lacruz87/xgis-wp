@@ -9,15 +9,6 @@ class ServiciosController < ApplicationController
     @BBB=a.getData#ENV['FOOVAR']
   end
 
-  def prueba
-    @direccion="Martin de zamora 5375, las condes, chile"
-    #@direccion="Las nieves 3435, Vitacura, Chile"
-    @direccion="av. la plaza 550, las condes, chile"
-    @georeferencia=Geocoder.coordinates(@direccion)
-    @lat=@georeferencia[0]
-    @lng=@georeferencia[1]
-  end
-
   def comunas_map
     @mapa=Comuna.all
 
@@ -63,7 +54,7 @@ class ServiciosController < ApplicationController
     end
     
     @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)    
-    @mapa = a.getComuna(@lat.to_f,@lng.to_f,4326)
+    @mapa = a.getComuna(@lat.to_f,@lng.to_f,3785)
 
     @nombrecomuna=@mapa[0].nom_com    
 
@@ -76,17 +67,7 @@ class ServiciosController < ApplicationController
       format.html
     end   
     
-  end
-    
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def buscador_comuna_params
-    params.permit(:direccion,:lat,:lng)
-  end
-
-  def buscador_predio_params
-    params.permit(:direccion,:lat,:lng, {:radius => [:km]},{:sup_min => [:ha]}, {:sup_max => [:ha]})
-  end
-  
+  end  
 
   def predios_map
     #@mapa=Predio.all
@@ -99,7 +80,8 @@ class ServiciosController < ApplicationController
 
     @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)
    
-    @mapa = a.getAllPrediosR(@lat.to_f,@lng.to_f,4326,0.2)
+    @mapa = a.getAllPrediosR(@lat.to_f,@lng.to_f,3785,0.5)
+    #4326
 
     respond_to do |format|
       format.json do
@@ -138,7 +120,7 @@ class ServiciosController < ApplicationController
     end
     
     @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)    
-    @mapa = a.getPredios(@lat.to_f,@lng.to_f,4326,@radius,@sup_min,@sup_max)    
+    @mapa = a.getPredios(@lat.to_f,@lng.to_f,3785,@radius,@sup_min,@sup_max)    
 
     respond_to do |format|
       format.json do
@@ -151,4 +133,24 @@ class ServiciosController < ApplicationController
 
 
   end
+
+    
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def buscador_comuna_params
+    params.permit(:direccion,:lat,:lng)
+  end
+
+  def buscador_predio_params
+    params.permit(:direccion,:lat,:lng, {:radius => [:km]},{:sup_min => [:ha]}, {:sup_max => [:ha]})
+  end
+
+  def prueba
+    @direccion="Martin de zamora 5375, las condes, chile"
+    #@direccion="Las nieves 3435, Vitacura, Chile"
+    @direccion="av. la plaza 550, las condes, chile"
+    @georeferencia=Geocoder.coordinates(@direccion)
+    @lat=@georeferencia[0]
+    @lng=@georeferencia[1]
+  end
+
 end

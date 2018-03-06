@@ -8,7 +8,7 @@ class ImportPrediosFromShp < ActiveRecord::Migration[5.1]
 
 			execute <<-SQL
 				insert into predios(gid, objectid, nom_com, sup_m2, sup_ha, geom, created_at, updated_at)
-					select gid, objectid, nom_com, sup_m2, sup_ha, ST_Transform(geom,4326),NOW(),NOW() from predios_rm_ref 
+					select gid, objectid, nom_com, sup_m2, sup_ha, ST_Transform(geom,3785),NOW(),NOW() from predios_rm_ref 
 
 			SQL
 
@@ -22,7 +22,7 @@ class ImportPrediosFromShp < ActiveRecord::Migration[5.1]
 
 			execute <<-SQL
 				insert into predios(gid, objectid, nom_com, sup_m2, sup_ha, geom, created_at, updated_at)
-					select gid, objectid, nom_com, sup_m2, sup_ha, ST_Transform(geom,4326),NOW(),NOW() from predios_rm_ref 
+					select gid, objectid, nom_com, sup_m2, sup_ha, ST_Transform(geom,3785),NOW(),NOW() from predios_rm_ref 
 
 			SQL
 
@@ -36,7 +36,7 @@ class ImportPrediosFromShp < ActiveRecord::Migration[5.1]
 
 			execute <<-SQL
 				insert into predios(gid, objectid, nom_com, sup_m2, sup_ha, geom, created_at, updated_at)
-					select gid, objectid, nom_com, sup_m2, sup_ha, ST_Transform(geom,4326),NOW(),NOW() from predios_rm_ref 
+					select gid, objectid, nom_com, sup_m2, sup_ha, ST_Transform(geom,3785),NOW(),NOW() from predios_rm_ref 
 
 			SQL
 
@@ -51,7 +51,7 @@ class ImportPrediosFromShp < ActiveRecord::Migration[5.1]
 
 			execute <<-SQL
 				insert into predios(gid, objectid, nom_com, sup_m2, sup_ha, geom, created_at, updated_at)
-					select gid, objectid, nom_com, sup_m2, sup_ha, ST_Transform(geom,4326),NOW(),NOW() from predios_rm_ref 
+					select gid, objectid, nom_com, sup_m2, sup_ha, ST_Transform(geom,3785),NOW(),NOW() from predios_rm_ref 
 
 			SQL
 

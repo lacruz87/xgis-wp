@@ -8,7 +8,7 @@ class ImportComunasFromShp < ActiveRecord::Migration[5.1]
 
 			execute <<-SQL
 				insert into comunas(nom_prov, nom_com, cod_comuna, geom, created_at, updated_at)
-					select nom_prov, nom_com, cod_comuna, ST_Transform(geom,4326),NOW(),NOW() from division_comunal_ref 
+					select nom_prov, nom_com, cod_comuna, ST_Transform(geom,3785),NOW(),NOW() from division_comunal_ref 
 
 			SQL
 

@@ -2,11 +2,6 @@ class GisMethods
   def initialize()
     #(direction, sort)
     #@mydirection = direction
-
-  end
-
-  def getData()
-    return "prueba helper"
   end
 
   def getJsonPath(url,lat, lng)
@@ -42,23 +37,26 @@ class GisMethods
   end
 
   def getComuna(lat, lng, srid)
-  	a=Comuna.where("ST_Intersects(geom, ST_GeomFromText('POINT(? ?)',?))",lng,lat,srid)
+  	a=Comuna.where("ST_Intersects(geom, ST_Transform(ST_GeomFromText('POINT(? ?)',4326),?))",lng,lat,srid)
   	return a
   end
 
   def getAllPrediosR(lat, lng, srid,r_km)
-    r_unit=r_km*0.01
-    #a=Predio.where("ST_Distance(geom,ST_GeomFromText('POINT(? ?)',?)) <= ?",lng,lat,srid,r_mt)
-    a=Predio.where("ST_Intersects(geom, ST_Buffer(ST_GeomFromText('POINT(? ?)',?),?))",lng,lat,srid,r_unit.to_s)
+    r_unit=r_km*1000#0.01
+    #a=Predio.where("ST_Intersects(geom, ST_Buffer(ST_GeomFromText('POINT(? ?)',?),?))",lng,lat,srid,r_unit.to_s)
+    a=Predio.where("ST_Intersects(geom, ST_Buffer(ST_Transform(ST_GeomFromText('POINT(? ?)',4326),?),?))",lng,lat,srid,r_unit.to_s)
     return a
   end
 
   def getPredios(lat, lng, srid,r_km,sup_min_ha,sup_max_ha)
-    r_unit=r_km*0.01
+    r_unit=r_km*1000
     #a=Predio.where("ST_Distance(geom,ST_GeomFromText('POINT(? ?)',?)) <= ?",lng,lat,srid,r_mt)
-    a=Predio.where("ST_Intersects(geom, ST_Buffer(ST_GeomFromText('POINT(? ?)',?),?)) AND sup_ha > ? AND sup_ha < ?",lng,lat,srid,r_unit.to_s,sup_min_ha.to_s,sup_max_ha.to_s)
+    a=Predio.where("ST_Intersects(geom, ST_Buffer(ST_Transform(ST_GeomFromText('POINT(? ?)',4326),?),?)) AND sup_ha > ? AND sup_ha < ?",lng,lat,srid,r_unit.to_s,sup_min_ha.to_s,sup_max_ha.to_s)
     return a
   end
 
+  def getData()
+    return "prueba helper"
+  end
 
 end

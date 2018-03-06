@@ -12,7 +12,12 @@ module Featurable
           hash[property_name.to_sym] = read_attribute(property_name)
           hash
         end
-        factory.feature read_attribute(geom_attr_name), self.id, properties
+        #factory.feature read_attribute(geom_attr_name), self.id, properties
+        str1 = self.as_geojson
+        geom2 = RGeo::GeoJSON.decode(str1)
+
+        factory.feature geom2, self.id, properties
+
       end
     end
 
@@ -24,5 +29,6 @@ module Featurable
       features = models.map(&:to_feature)
       factory.feature_collection features
     end
+
   end
 end
