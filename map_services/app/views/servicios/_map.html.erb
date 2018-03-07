@@ -23,7 +23,7 @@
 
 			map.data.addListener('mouseover', function(event) {
 			  map.data.revertStyle();
-			  $('#info-box').text(event.feature.getProperty('nom_com'));
+			  $('#info-box').text(event.feature.getProperty('<%=@PropDisplayName%>'));
 			  map.data.overrideStyle(event.feature, { fillColor: 'red' });
 			});
 

@@ -18,8 +18,9 @@ class ServiciosController < ApplicationController
     @lat=-33.405009
     @lng=-70.597293
 
+
     @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)
-   
+    @PropDisplayName='nom_com'
 
     respond_to do |format|
       format.json do
@@ -53,7 +54,8 @@ class ServiciosController < ApplicationController
       end
     end
     
-    @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)    
+    @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)
+    @PropDisplayName='nom_com'    
     @mapa = a.getComuna(@lat.to_f,@lng.to_f,3785)
 
     @nombrecomuna=@mapa[0].nom_com    
@@ -79,7 +81,7 @@ class ServiciosController < ApplicationController
     @lng=-70.597293
 
     @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)
-   
+    @PropDisplayName='sup_ha'
     @mapa = a.getAllPrediosR(@lat.to_f,@lng.to_f,3785,0.5)
     #4326
 
@@ -119,7 +121,8 @@ class ServiciosController < ApplicationController
       end
     end
     
-    @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)    
+    @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)
+    @PropDisplayName='sup_ha'    
     @mapa = a.getPredios(@lat.to_f,@lng.to_f,3785,@radius,@sup_min,@sup_max)    
 
     respond_to do |format|
@@ -133,6 +136,29 @@ class ServiciosController < ApplicationController
 
 
   end
+
+  def prcs_map
+    @mapa=Prc.all
+
+    a=GisMethods.new()    
+    @key=a.getGoogleMapsKey()
+
+    @lat=-33.405009
+    @lng=-70.597293
+
+    @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)
+    @PropDisplayName='zona'
+
+    respond_to do |format|
+      format.json do
+        feature_collection = Prc.to_feature_collection @mapa
+        render json: RGeo::GeoJSON.encode(feature_collection)
+      end
+
+      format.html
+    end
+  end
+
 
     
   # Never trust parameters from the scary internet, only allow the white list through.

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221133117) do
+ActiveRecord::Schema.define(version: 20180307142841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,26 @@ ActiveRecord::Schema.define(version: 20180221133117) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["geom"], name: "index_comunas_on_geom", using: :gist
+  end
+
+  create_table "prcs", force: :cascade do |t|
+    t.string "nom_com"
+    t.string "tipo_edificacion"
+    t.string "uso_suelo"
+    t.string "comuna"
+    t.string "sector"
+    t.string "zona"
+    t.string "nombre"
+    t.string "upref"
+    t.string "uperm"
+    t.string "uproh"
+    t.string "str_1"
+    t.string "str_2"
+    t.string "str_3"
+    t.geometry "geom", limit: {:srid=>3785, :type=>"geometry"}
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["geom"], name: "index_prcs_on_geom", using: :gist
   end
 
   create_table "predios", force: :cascade do |t|
