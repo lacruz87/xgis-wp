@@ -1,7 +1,7 @@
 class Prc < ApplicationRecord
 
 	include Featurable
-	featurable :geom, [:zona]
+	featurable :geom, [:zona,:comuna]
 
     def as_geojson
       sql = "SELECT ST_asgeojson(ST_Transform(ST_SetSRID(geom,3785),4326)) FROM Prcs where id = #{self.id};"

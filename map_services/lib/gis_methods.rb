@@ -55,6 +55,16 @@ class GisMethods
     return a
   end
 
+  def getPrc(lat, lng, srid)
+    a=Prc.where("ST_Intersects(geom, ST_Transform(ST_GeomFromText('POINT(? ?)',4326),?))",lng,lat,srid)
+    return a
+  end
+
+  def getPrcG(geom2)
+    a=Prc.where("ST_Intersects(geom, ?)",geom2)
+    return a
+  end
+
   def getData()
     return "prueba helper"
   end

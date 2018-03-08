@@ -19,5 +19,12 @@ Rails.application.routes.draw do
 
   get 'servicios/prcs_map'
 
+  get 'servicios/prc_request'
+
+  get 'servicios/prc_response'
+
+  get 'servicios/general_request'
+
+  get 'servicios/general_response'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

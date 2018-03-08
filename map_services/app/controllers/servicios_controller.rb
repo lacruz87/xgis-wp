@@ -1,6 +1,6 @@
 class ServiciosController < ApplicationController
   require 'gis_methods'
-  helper_method :getComuna,:getData, :getLatLng, :getGoogleMapsKey,:getJsonPath,:getAllPrediosR, :getPredios
+  helper_method :getComuna,:getData, :getLatLng, :getGoogleMapsKey,:getJsonPath,:getAllPrediosR, :getPredios, :getPrc, :getPrcG
 
   def index
     a=GisMethods.new()
@@ -159,6 +159,99 @@ class ServiciosController < ApplicationController
     end
   end
 
+  def prc_request
+  end
+
+  def prc_response
+    @response_var=buscador_prc_params
+
+    @direccion = @response_var['direccion']
+    @lat=@response_var['lat']
+    @lng=@response_var['lng']
+
+    a=GisMethods.new()    
+    @key=a.getGoogleMapsKey()
+
+    if (@lat==nil || @lng==nil) then
+      if (@direccion!=nil) then
+        @lat,@lng=a.getLatLng(@direccion)
+      else
+        @lat=-33.405009
+        @lng=-70.597293
+      end
+    end
+    
+    @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)
+    @PropDisplayName='zona'    
+    @mapa = a.getPrc(@lat.to_f,@lng.to_f,3785)
+    @nombrezona=@mapa[0].zona
+
+    respond_to do |format|
+      format.json do
+        feature_collection = Prc.to_feature_collection @mapa
+        render json: RGeo::GeoJSON.encode(feature_collection)
+      end
+
+      format.html
+    end 
+  end
+
+  def general_request
+  end
+
+  def general_response
+    @response_var=buscador_general_params
+
+    @direccion = @response_var['direccion']
+    @lat=@response_var['lat']
+    @lng=@response_var['lng']
+    @radius = @response_var['radius']['km'].to_f
+    @sup_min=@response_var['sup_min']['ha']
+    @sup_max=@response_var['sup_max']['ha']
+
+    a=GisMethods.new()    
+    @key=a.getGoogleMapsKey()
+
+    if (@lat==nil || @lng==nil) then
+      if (@direccion!=nil) then
+        @lat,@lng=a.getLatLng(@direccion)
+      else
+        @lat=-33.405009
+        @lng=-70.597293
+      end
+    end
+    
+    @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)
+    @PropDisplayName='zona'    
+    @mapa0 = a.getPredios(@lat.to_f,@lng.to_f,3785,@radius,@sup_min,@sup_max)
+
+    temparr = []
+    @mapa0.each do |i|
+      oSite= Site.new()
+      oSite.geom=i.as_geojson
+      oSite.sup_ha=i.sup_ha
+      oSite.id=i.id
+  
+      mapa_prc = a.getPrcG(i.geom)
+
+      nombrezona=mapa_prc[0].zona
+      oSite.zona=nombrezona
+
+      temparr.push(oSite)
+    end
+
+    @mapa=temparr    
+
+    respond_to do |format|
+      format.json do
+        feature_collection = Site.to_feature_collection @mapa
+        render json: RGeo::GeoJSON.encode(feature_collection)
+      end
+
+      format.html
+    end 
+  end
+
 
     
   # Never trust parameters from the scary internet, only allow the white list through.
@@ -167,6 +260,14 @@ class ServiciosController < ApplicationController
   end
 
   def buscador_predio_params
+    params.permit(:direccion,:lat,:lng, {:radius => [:km]},{:sup_min => [:ha]}, {:sup_max => [:ha]})
+  end
+
+  def buscador_prc_params
+    params.permit(:direccion,:lat,:lng)
+  end
+
+  def buscador_general_params
     params.permit(:direccion,:lat,:lng, {:radius => [:km]},{:sup_min => [:ha]}, {:sup_max => [:ha]})
   end
 
