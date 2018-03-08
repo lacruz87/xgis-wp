@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: prop_services_production
-  username: prop_services
+  username: <%= ENV['PROP_SERVICES_DATABASE_USERNAME'] %>
   password: <%= ENV['PROP_SERVICES_DATABASE_PASSWORD'] %>

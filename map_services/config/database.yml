@@ -86,5 +86,5 @@ test:
 production:
   <<: *default
   database: map_services_production
-  username: map_services
+  username: <%= ENV['MAP_SERVICES_DATABASE_USERNAME'] %>
   password: <%= ENV['MAP_SERVICES_DATABASE_PASSWORD'] %>
