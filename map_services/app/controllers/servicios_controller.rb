@@ -1,6 +1,6 @@
 class ServiciosController < ApplicationController
   require 'gis_methods'
-  helper_method :getComuna,:getData, :getLatLng, :getGoogleMapsKey,:getJsonPath,:getAllPrediosR, :getPredios, :getPrc, :getPrcG
+  helper_method :getComuna,:getData, :getLatLng, :getGoogleMapsKey,:getJsonPath,:getAllPrediosR, :getPredios, :getPrc, :getPrcG, :getSites
 
   def index
     a=GisMethods.new()
@@ -223,24 +223,8 @@ class ServiciosController < ApplicationController
     
     @jsonPath=a.getJsonPath(request.fullpath,@lat,@lng)
     @PropDisplayName='zona'    
-    @mapa0 = a.getPredios(@lat.to_f,@lng.to_f,3785,@radius,@sup_min,@sup_max)
-
-    temparr = []
-    @mapa0.each do |i|
-      oSite= Site.new()
-      oSite.geom=i.as_geojson
-      oSite.sup_ha=i.sup_ha
-      oSite.id=i.id
-  
-      mapa_prc = a.getPrcG(i.geom)
-
-      nombrezona=mapa_prc[0].zona
-      oSite.zona=nombrezona
-
-      temparr.push(oSite)
-    end
-
-    @mapa=temparr    
+ 
+    @mapa=a.getSites(@lat.to_f,@lng.to_f,3785,@radius,@sup_min,@sup_max)  
 
     respond_to do |format|
       format.json do

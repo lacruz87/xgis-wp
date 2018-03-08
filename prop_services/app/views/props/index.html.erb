@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Props</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lat</th>
+      <th>Lng</th>
+      <th>M2 terreno</th>
+      <th>Precio uf</th>
+      <th>Uf x m2</th>
+      <th>Origen</th>
+      <th>Rank</th>
+      <th>Check</th>
+      <th>Fl 1</th>
+      <th>Fl 2</th>
+      <th>Fl 3</th>
+      <th>Int 1</th>
+      <th>Int 2</th>
+      <th>Int 3</th>
+      <th>Str 1</th>
+      <th>Str 2</th>
+      <th>Str 3</th>
+      <th>Dt 1</th>
+      <th>Dt 2</th>
+      <th>Dt 3</th>
+      <th>Dt 4</th>
+      <th>Bo 1</th>
+      <th>Bo 2</th>
+      <th>Bo 3</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @props.each do |prop| %>
+      <tr>
+        <td><%= prop.lat %></td>
+        <td><%= prop.lng %></td>
+        <td><%= prop.m2_terreno %></td>
+        <td><%= prop.precio_uf %></td>
+        <td><%= prop.uf_x_m2 %></td>
+        <td><%= prop.origen %></td>
+        <td><%= prop.rank %></td>
+        <td><%= prop.check %></td>
+        <td><%= prop.fl_1 %></td>
+        <td><%= prop.fl_2 %></td>
+        <td><%= prop.fl_3 %></td>
+        <td><%= prop.int_1 %></td>
+        <td><%= prop.int_2 %></td>
+        <td><%= prop.int_3 %></td>
+        <td><%= prop.str_1 %></td>
+        <td><%= prop.str_2 %></td>
+        <td><%= prop.str_3 %></td>
+        <td><%= prop.dt_1 %></td>
+        <td><%= prop.dt_2 %></td>
+        <td><%= prop.dt_3 %></td>
+        <td><%= prop.dt_4 %></td>
+        <td><%= prop.bo_1 %></td>
+        <td><%= prop.bo_2 %></td>
+        <td><%= prop.bo_3 %></td>
+        <td><%= link_to 'Show', prop %></td>
+        <td><%= link_to 'Edit', edit_prop_path(prop) %></td>
+        <td><%= link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prop', new_prop_path %>
+
+</br>
+<%= link_to "Inicio", root_path %>
+</br>

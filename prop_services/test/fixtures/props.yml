@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lat: 1.5
+  lng: 1.5
+  m2_terreno: 1.5
+  precio_uf: MyString
+  uf_x_m2: 1.5
+  origen: MyString
+  rank: 1.5
+  check: false
+  fl_1: 1.5
+  fl_2: 1.5
+  fl_3: 1.5
+  int_1: 1
+  int_2: 1
+  int_3: 1
+  str_1: MyString
+  str_2: MyString
+  str_3: MyString
+  dt_1: 2018-03-08 12:47:44
+  dt_2: 2018-03-08 12:47:44
+  dt_3: 2018-03-08 12:47:44
+  dt_4: 2018-03-08 12:47:44
+  bo_1: false
+  bo_2: false
+  bo_3: false
+
+two:
+  lat: 1.5
+  lng: 1.5
+  m2_terreno: 1.5
+  precio_uf: MyString
+  uf_x_m2: 1.5
+  origen: MyString
+  rank: 1.5
+  check: false
+  fl_1: 1.5
+  fl_2: 1.5
+  fl_3: 1.5
+  int_1: 1
+  int_2: 1
+  int_3: 1
+  str_1: MyString
+  str_2: MyString
+  str_3: MyString
+  dt_1: 2018-03-08 12:47:44
+  dt_2: 2018-03-08 12:47:44
+  dt_3: 2018-03-08 12:47:44
+  dt_4: 2018-03-08 12:47:44
+  bo_1: false
+  bo_2: false
+  bo_3: false

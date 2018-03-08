@@ -65,6 +65,29 @@ class GisMethods
     return a
   end
 
+  def getSites(lat, lng, srid,r_km,sup_min_ha,sup_max_ha)
+    mapa0 = self.getPredios(lat,lng,srid,r_km,sup_min_ha,sup_max_ha)
+
+    temparr = []
+    mapa0.each do |i|
+      oSite= Site.new()
+      oSite.geom=i.as_geojson
+      oSite.sup_ha=i.sup_ha
+      oSite.id=i.id
+  
+      mapa_prc = self.getPrcG(i.geom)
+
+      nombrezona=mapa_prc[0].zona
+      oSite.zona=nombrezona
+
+      temparr.push(oSite)
+    end
+
+    a=temparr 
+
+    return a
+  end
+
   def getData()
     return "prueba helper"
   end

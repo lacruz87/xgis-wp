@@ -1,0 +1,137 @@
+<%= form_with(model: prop, local: true) do |form| %>
+  <% if prop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prop.errors.count, "error") %> prohibited this prop from being saved:</h2>
+
+      <ul>
+      <% prop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lat %>
+    <%= form.text_field :lat, id: :prop_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lng %>
+    <%= form.text_field :lng, id: :prop_lng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :m2_terreno %>
+    <%= form.text_field :m2_terreno, id: :prop_m2_terreno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precio_uf %>
+    <%= form.text_field :precio_uf, id: :prop_precio_uf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uf_x_m2 %>
+    <%= form.text_field :uf_x_m2, id: :prop_uf_x_m2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :origen %>
+    <%= form.text_field :origen, id: :prop_origen %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rank %>
+    <%= form.text_field :rank, id: :prop_rank %>
+  </div>
+
+  <div class="field">
+    <%= form.label :check %>
+    <%= form.check_box :check, id: :prop_check %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fl_1 %>
+    <%= form.text_field :fl_1, id: :prop_fl_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fl_2 %>
+    <%= form.text_field :fl_2, id: :prop_fl_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fl_3 %>
+    <%= form.text_field :fl_3, id: :prop_fl_3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :int_1 %>
+    <%= form.number_field :int_1, id: :prop_int_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :int_2 %>
+    <%= form.number_field :int_2, id: :prop_int_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :int_3 %>
+    <%= form.number_field :int_3, id: :prop_int_3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :str_1 %>
+    <%= form.text_field :str_1, id: :prop_str_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :str_2 %>
+    <%= form.text_field :str_2, id: :prop_str_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :str_3 %>
+    <%= form.text_field :str_3, id: :prop_str_3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dt_1 %>
+    <%= form.datetime_select :dt_1, id: :prop_dt_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dt_2 %>
+    <%= form.datetime_select :dt_2, id: :prop_dt_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dt_3 %>
+    <%= form.datetime_select :dt_3, id: :prop_dt_3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dt_4 %>
+    <%= form.datetime_select :dt_4, id: :prop_dt_4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bo_1 %>
+    <%= form.check_box :bo_1, id: :prop_bo_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bo_2 %>
+    <%= form.check_box :bo_2, id: :prop_bo_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bo_3 %>
+    <%= form.check_box :bo_3, id: :prop_bo_3 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
