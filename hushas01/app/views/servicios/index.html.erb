@@ -1,0 +1,78 @@
+<div class="container">
+
+  <div class="starter-template">
+	
+	<h1>Servicios#index</h1>
+	Hushas!
+	<hr />
+	
+	<h2>Mapa del Sitio</h2>
+	
+	<br />
+	
+	<ul>
+		<li> API: para interactuar con la BD con JSON</li>
+		<li> <%=link_to "Comunas",comunas_path%>: Todas las comunas con el link del PRC</li>
+		<li> <%=link_to "Regiones",regiones_path%>: Todas las regiones</li>
+		<li> <%=link_to "Direcciones",direcciones_path%>: Todas las direcciones quedan registradas del buscador</li>
+		<li> <%=link_to "Direcs",direcs_path%>: OBSOLETO</li>
+		<li> <%=link_to "Servicios",servicios_index_path%>: Todos los servicios para el usuario</li>
+		<li> <%=link_to "props",props_path%>: Propiedades PI</li>
+		<li> <%=link_to "prop_casapi_infos",prop_casapi_infos_path%>: OBSOLETO</li>
+		<li> <%=link_to "prop_casapi_infos2",prop_casapi_info2s_path%>: Detalle propiedades casas PI2</li>
+		<li> <%=link_to "Objetivos",objetivos_path%>: Detalle propiedades casas PI</li>
+		
+	</ul>
+	
+	<br />
+	<hr />
+	API
+	<ul>
+		<li> delete_all</li>
+		<li> new_pi</li>
+		<li> buscarcodigo</li>
+		<li> procesarCasasLC</li>		
+	</ul>	
+		
+	<hr />
+	
+	<ul>
+		<li> Agregar datos de casas faltantes. lat, lng, zona, valor uf, precio uf, zona, objetivo, estados, nombre, telefono, correo vendedor</li>
+		<li> Modificar el servicio para crear propiedad</li>
+		<li> Modificar crawler y cargar información</li>
+		<li> Crear servicio para procesar casas</li>
+		<li> Generar Reporte de casas que cumplan</li>
+		<li> Generar Correo automatico</li>
+		<li> _________________</li>
+		<li> Index básico</li>
+		<li> Generar la BD</li>
+		<li> Generar servicio para cargar información</li>
+		<li> Generar página de busqueda de propiedades</li>
+		<li> python. cargar la infomación</li>
+		<li> Servicio para validar si una propiedad está cargada</li>
+		<li> api georeferencia y plan regulador</li>
+		<li> generar alertas de correo</li>
+		<li> Mejorar página inicial</li>
+		<li> extraer info de tt</li>
+		<li> extraer info de em</li>   
+	</ul>   
+	 <script>
+var bootstrap3_enabled = (typeof $().emulateTransitionEnd == 'function');
+</script>
+	 
+	 <button type="button" onclick="document.getElementById('demo').innerHTML = bootstrap3_enabled">
+	 	Click me to display BS</button>
+
+	<p id="demo"></p>
+	 
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

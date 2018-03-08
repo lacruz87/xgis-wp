@@ -1,0 +1,12 @@
+
+
+
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Propiedades") do |sheet|
+    sheet.add_row (@headers)
+    @prop_casapi_info2s.each do |propiedad|
+        #sheet.add_row([propiedad.id,propiedad.precio])
+        sheet.add_row(propiedad.attributes.values+propiedad.prop.attributes.values)
+        
+    end
+end

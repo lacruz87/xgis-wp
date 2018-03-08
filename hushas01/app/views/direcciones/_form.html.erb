@@ -1,0 +1,47 @@
+<%= form_for(direccion) do |f| %>
+  <% if direccion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(direccion.errors.count, "error") %> prohibited this direccion from being saved:</h2>
+
+      <ul>
+      <% direccion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :direccion %>
+    <%= f.text_field :direccion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comuna_id %>
+    <%= f.text_field :comuna_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Argis_json %>
+    <%= f.text_field :Argis_json %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zona %>
+    <%= f.text_field :zona %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

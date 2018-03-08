@@ -1,0 +1,47 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1>Prop Casapi Infos</h1>
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Publicacion</th>
+      <th>Precio</th>
+      <th>Sector</th>
+      <th>Direccion</th>
+      <th>Programa</th>
+      <th>Superficie</th>
+      <th>Descripcion</th>
+      <th>Sup construida</th>
+      <th>Sup terreno</th>
+      <th>Prop</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prop_casapi_infos.each do |prop_casapi_info| %>
+      <tr>
+        <td><%= prop_casapi_info.publicacion %></td>
+        <td><%= prop_casapi_info.precio %></td>
+        <td><%= prop_casapi_info.sector %></td>
+        <td><%= prop_casapi_info.direccion %></td>
+        <td><%= prop_casapi_info.programa %></td>
+        <td><%= prop_casapi_info.superficie %></td>
+        <td><%= prop_casapi_info.descripcion %></td>
+        <td><%= prop_casapi_info.sup_construida %></td>
+        <td><%= prop_casapi_info.sup_terreno %></td>
+        <td><%= link_to 'Ver Detalle Propiedad',prop_casapi_info.prop %></td>
+        <td><%= link_to 'Show', prop_casapi_info %></td>
+        <td><%= link_to 'Edit', edit_prop_casapi_info_path(prop_casapi_info) %></td>
+        <td><%= link_to 'Destroy', prop_casapi_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Prop Casapi Info', new_prop_casapi_info_path %>
+</div>

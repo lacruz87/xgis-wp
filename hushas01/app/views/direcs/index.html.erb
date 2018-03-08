@@ -1,0 +1,39 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1>Direcs</h1>
+
+	<div class="table-responsive">
+		<table class="table">
+  <thead>
+    <tr>
+      <th>Direccion</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Argis json</th>
+      <th>Zona</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @direcs.each do |direc| %>
+      <tr>
+        <td><%= direc.direccion %></td>
+        <td><%= direc.latitude %></td>
+        <td><%= direc.longitude %></td>
+        <td><%= direc.Argis_json %></td>
+        <td><%= direc.zona %></td>
+        <td><%= link_to 'Show', direc %></td>
+        <td><%= link_to 'Edit', edit_direc_path(direc) %></td>
+        <td><%= link_to 'Destroy', direc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Direc', new_direc_path %>
+</div>

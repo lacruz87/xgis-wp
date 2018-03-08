@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comuna: one
+  zona_prc: MyString
+  zona: MyString
+  constructibilidad: 1.5
+  target_uf_m2: 1.5
+  premio_fusion: false
+
+two:
+  comuna: two
+  zona_prc: MyString
+  zona: MyString
+  constructibilidad: 1.5
+  target_uf_m2: 1.5
+  premio_fusion: false

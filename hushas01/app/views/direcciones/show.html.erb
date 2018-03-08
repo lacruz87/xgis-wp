@@ -1,0 +1,48 @@
+<div class="container">
+	<p id="notice">
+		<%= notice %>
+	</p>
+
+	<p>
+		<strong>Direccion:</strong>
+		<%= @direccion.direccion %>
+	</p>
+
+	<p>
+		<strong>Comuna:</strong>
+		<%= @direccion.comuna.nombre %>
+	</p>
+
+	<p>
+		<strong>Latitude:</strong>
+		<%= @direccion.latitude %>
+	</p>
+
+	<p>
+		<strong>Longitude:</strong>
+		<%= @direccion.longitude %>
+	</p>
+
+	<p>
+		<strong>Argis json:</strong>
+		<%= @direccion.Argis_json %>
+	</p>
+
+	<p>
+		<strong>Zona:</strong>
+		<%= @direccion.zona %>
+	</p>
+
+	<%= link_to 'Edit', edit_direccion_path(@direccion) %> |
+	<%= link_to 'Back', direcciones_path %>
+<br />
+<%=@mostrar%>
+
+<br>
+
+Transformación p_3857.transform(p_4326)
+
+</div>
+<div class="container">
+	<img src="<%=@link_mapa%>" />
+</div>

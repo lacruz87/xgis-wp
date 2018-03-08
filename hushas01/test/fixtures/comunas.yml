@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  PRC_link: MyString
+  region: one
+  nombre_PI: MyString
+
+two:
+  nombre: MyString
+  PRC_link: MyString
+  region: two
+  nombre_PI: MyString

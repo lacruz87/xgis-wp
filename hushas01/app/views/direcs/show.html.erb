@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @direc.direccion %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @direc.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @direc.longitude %>
+</p>
+
+<p>
+  <strong>Argis json:</strong>
+  <%= @direc.Argis_json %>
+</p>
+
+<p>
+  <strong>Zona:</strong>
+  <%= @direc.zona %>
+</p>
+
+<%= link_to 'Edit', edit_direc_path(@direc) %> |
+<%= link_to 'Back', direcs_path %>

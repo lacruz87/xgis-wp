@@ -1,0 +1,22 @@
+<div class="container">
+	<h1>Buscador de Plano Regulador</h1>
+	<div class="form-group">
+		<%= form_tag("/servicios/nueva_busqueda", method: "get") do %>
+		<%= label_tag(:direccion, "Dirección:",class: 'form-control') %>
+		<%= text_field_tag(:direccion,"", class: 'form-control') %>
+
+<%
+=begin
+%>
+<%= collection_select(:comuna, :comuna_id, @comunas, :id, :nombre) %>
+<%
+=end
+%>
+		<%= label_tag(:comuna_id, "Comuna:",class: 'form-control') %>
+		<%= select_tag :comuna_id,options_from_collection_for_select(@comunas, :id, :nombre),class: 'form-control'%>
+
+		<%= submit_tag("Buscar") %>
+		<% end %>
+	</div>
+</div>
+

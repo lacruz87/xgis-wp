@@ -1,0 +1,42 @@
+<%= form_for(prop) do |f| %>
+  <% if prop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prop.errors.count, "error") %> prohibited this prop from being saved:</h2>
+
+      <ul>
+      <% prop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fuente %>
+    <%= f.text_field :fuente %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :codigo %>
+    <%= f.number_field :codigo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :operacion %>
+    <%= f.text_field :operacion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+    <%= f.text_field :tipo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module PropCasapiInfo2sHelper
+end

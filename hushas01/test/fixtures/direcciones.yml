@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  direccion: MyString
+  comuna: one
+  latitude: 1.5
+  longitude: 1.5
+  Argis_json: MyString
+  zona: MyString
+
+two:
+  direccion: MyString
+  comuna: two
+  latitude: 1.5
+  longitude: 1.5
+  Argis_json: MyString
+  zona: MyString

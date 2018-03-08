@@ -1,0 +1,32 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fuente:</strong>
+  <%= @prop.fuente %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= link_to @prop.url,@prop.url %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @prop.codigo %>
+</p>
+
+<p>
+  <strong>Operacion:</strong>
+  <%= @prop.operacion %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @prop.tipo %>
+</p>
+
+<%= link_to 'Edit', edit_prop_path(@prop) %> |
+<%= link_to 'Back', props_path %>
+
+</div>

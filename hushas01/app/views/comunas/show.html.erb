@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @comuna.nombre %>
+</p>
+
+<p>
+  <strong>Prc link:</strong>
+  <%= @comuna.PRC_link %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @comuna.region %>
+</p>
+
+<p>
+  <strong>Nombre pi:</strong>
+  <%= @comuna.nombre_PI %>
+</p>
+
+<%= link_to 'Edit', edit_comuna_path(@comuna) %> |
+<%= link_to 'Back', comunas_path %>

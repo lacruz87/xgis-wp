@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comuna:</strong>
+  <%= @objetivo.comuna %>
+</p>
+
+<p>
+  <strong>Zona prc:</strong>
+  <%= @objetivo.zona_prc %>
+</p>
+
+<p>
+  <strong>Zona:</strong>
+  <%= @objetivo.zona %>
+</p>
+
+<p>
+  <strong>Constructibilidad:</strong>
+  <%= @objetivo.constructibilidad %>
+</p>
+
+<p>
+  <strong>Target uf m2:</strong>
+  <%= @objetivo.target_uf_m2 %>
+</p>
+
+<p>
+  <strong>Premio fusion:</strong>
+  <%= @objetivo.premio_fusion %>
+</p>
+
+<%= link_to 'Edit', edit_objetivo_path(@objetivo) %> |
+<%= link_to 'Back', objetivos_path %>

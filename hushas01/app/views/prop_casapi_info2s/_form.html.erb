@@ -1,0 +1,117 @@
+<%= form_for(prop_casapi_info2) do |f| %>
+  <% if prop_casapi_info2.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prop_casapi_info2.errors.count, "error") %> prohibited this prop_casapi_info2 from being saved:</h2>
+
+      <ul>
+      <% prop_casapi_info2.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :publicacion %>
+    <%= f.date_select :publicacion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :precio %>
+    <%= f.number_field :precio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sector %>
+    <%= f.text_field :sector %>
+  </div>
+
+  <div class="field">
+    <%= f.label :direccion %>
+    <%= f.text_field :direccion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :programa %>
+    <%= f.text_field :programa %>
+  </div>
+
+  <div class="field">
+    <%= f.label :superficie %>
+    <%= f.text_field :superficie %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_field :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sup_construida %>
+    <%= f.number_field :sup_construida %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sup_terreno %>
+    <%= f.number_field :sup_terreno %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lat %>
+    <%= f.text_field :lat %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lng %>
+    <%= f.text_field :lng %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zona %>
+    <%= f.text_field :zona %>
+  </div>
+
+  <div class="field">
+    <%= f.label :valor_uf %>
+    <%= f.text_field :valor_uf %>
+  </div>
+
+  <div class="field">
+    <%= f.label :precio_uf %>
+    <%= f.text_field :precio_uf %>
+  </div>
+
+  <div class="field">
+    <%= f.label :objetivo %>
+    <%= f.text_field :objetivo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estado %>
+    <%= f.text_field :estado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contacto %>
+    <%= f.text_field :contacto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %>
+    <%= f.text_field :telefono %>
+  </div>
+
+  <div class="field">
+    <%= f.label :correo %>
+    <%= f.text_field :correo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prop_id %>
+    <%= f.text_field :prop_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

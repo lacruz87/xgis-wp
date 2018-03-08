@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  publicacion: 2017-06-18
+  precio: 1
+  sector: MyString
+  direccion: MyString
+  programa: MyString
+  superficie: MyString
+  descripcion: MyString
+  sup_construida: 1
+  sup_terreno: 1
+  prop: one
+
+two:
+  publicacion: 2017-06-18
+  precio: 1
+  sector: MyString
+  direccion: MyString
+  programa: MyString
+  superficie: MyString
+  descripcion: MyString
+  sup_construida: 1
+  sup_terreno: 1
+  prop: two

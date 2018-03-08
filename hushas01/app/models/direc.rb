@@ -1,0 +1,2 @@
+class Direc < ApplicationRecord
+end
