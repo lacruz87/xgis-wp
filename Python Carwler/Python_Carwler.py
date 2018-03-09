@@ -120,11 +120,18 @@ class SiteMapManager:
         self.SystemsList = xmldocSiteMap.getElementsByTagName('sitemap')
         print("Total Sistemas: " +str (len(self.SystemsList)))
 
-    def processSiteMap(self):    
-        for s in self.SystemsList:
-            loc=s.getElementsByTagName('loc')[0].childNodes[0].data
-            if "sitemappropiedades" in loc:
-                self.lista_Links.append(loc)
+    def processSiteMap(self):
+        self.lista_Links.append('http://www.portalinmobiliario.com/sitemaps/sitemappropiedades.xml.gz')
+        self.lista_Links.append('http://www.portalinmobiliario.com/sitemaps/sitemappropiedades1.xml.gz')
+        self.lista_Links.append('http://www.portalinmobiliario.com/sitemaps/sitemappropiedades2.xml.gz')
+        self.lista_Links.append('http://www.portalinmobiliario.com/sitemaps/sitemappropiedades3.xml.gz')
+        self.lista_Links.append('http://www.portalinmobiliario.com/sitemaps/sitemappropiedades4.xml.gz')
+        self.lista_Links.append('http://www.portalinmobiliario.com/sitemaps/sitemappropiedades5.xml.gz')
+        self.lista_Links.append('http://www.portalinmobiliario.com/sitemaps/sitemappropiedades6.xml.gz')
+##        for s in self.SystemsList:
+##            loc=s.getElementsByTagName('loc')[0].childNodes[0].data
+##            if "sitemappropiedades" in loc:
+##                self.lista_Links.append(loc)
 
     def getlista_Links(self):
         return self.lista_Links

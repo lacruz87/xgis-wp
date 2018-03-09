@@ -12,6 +12,7 @@
   <thead>
     <tr>
       <th>Prop</th>
+      <th>GIS</th>
       <th>Publicacion</th>
       <th>Precio</th>
       <th>Sector</th>
@@ -39,6 +40,12 @@
     <% @prop_casapi_info2s.each do |prop_casapi_info2| %>
       <tr>
       	<td><%= link_to 'Ver Detalle Propiedad',prop_casapi_info2.prop %></td>
+        <%
+          sup_min=prop_casapi_info2.sup_terreno*0.95/10000
+          sup_max=prop_casapi_info2.sup_terreno*1.05/10000
+          url='http://ec2-52-15-240-198.us-east-2.compute.amazonaws.com:8080/servicios/general_response?radius%5Bkm%5D=0.3&sup_min%5Bha%5D='+sup_min.to_s+'&sup_max%5Bha%5D='+sup_max.to_s+'&commit=Buscar&lat='+prop_casapi_info2.lat.to_s+'&lng='+prop_casapi_info2.lng.to_s
+        %>
+        <td><%= link_to 'Ver GIS',url %></td>
         <td><%= prop_casapi_info2.publicacion %></td>
         <td><%= prop_casapi_info2.precio %></td>
         <td><%= prop_casapi_info2.sector %></td>

@@ -7,6 +7,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "hushas01/config/database.yml",
+			"settings":
+			{
+				"buffer_size": 3006,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "hushas01/config/secrets.yml",
+			"settings":
+			{
+				"buffer_size": 974,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -66,11 +84,15 @@
 	"expanded_folders":
 	[
 		"/home/lacruz/Desktop/xgis/xgis-wp",
-		"/home/lacruz/Desktop/xgis/xgis-wp/prop_services",
-		"/home/lacruz/Desktop/xgis/xgis-wp/prop_services/config"
+		"/home/lacruz/Desktop/xgis/xgis-wp/hushas01",
+		"/home/lacruz/Desktop/xgis/xgis-wp/hushas01/config"
 	],
 	"file_history":
 	[
+		"/home/lacruz/Desktop/xgis/xgis-wp/hushas01/app/views/prop_casapi_info2s/index.html.erb",
+		"/home/lacruz/Desktop/xgis/xgis-wp/map_services/config/application.rb",
+		"/home/lacruz/Desktop/xgis/xgis-wp/map_services/config/environments/production.rb",
+		"/home/lacruz/Desktop/xgis/xgis-wp/map_services/config/environments/development.rb",
 		"/home/lacruz/Desktop/xgis/xgis-wp/prop_services/config/database.yml",
 		"/home/lacruz/Desktop/xgis/xgis-wp/prop_services/config/secrets.yml",
 		"/home/lacruz/Desktop/xgis/xgis-wp/map_services/config/database.yml",
@@ -136,7 +158,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -150,6 +172,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"relative_url_r",
+			"config.relative_url_r"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -167,8 +191,67 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "hushas01/config/database.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2912,
+								2912
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "hushas01/config/secrets.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								973,
+								973
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
